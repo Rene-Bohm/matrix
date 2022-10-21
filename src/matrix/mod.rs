@@ -2,8 +2,8 @@ use crate::error::{self, MatrixError};
 use crate::num::{One, Zero};
 use std::ops::{Add, AddAssign, Div, DivAssign, Mul, MulAssign, Sub, SubAssign};
 
-mod index;
 mod iter;
+mod mem;
 mod ops;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
@@ -74,22 +74,5 @@ where
 
     pub fn get_vec(&self) -> Vec<T> {
         self.entries.clone()
-    }
-
-    pub fn index_calc(
-        dimension: (usize, usize),
-        row: usize,
-        column: usize,
-    ) -> Result<usize, error::MatrixError> {
-        if dimension.0 < row || dimension.1 < column {
-            let error = format!(
-                "It is not possible to index [{}][{}]\n
-                                        if the Matrix is a {}x{}!",
-                row, column, dimension.0, dimension.1
-            );
-            Err(MatrixError::new(&error.clone()))
-        } else {
-            Ok(row * dimension.0 + column)
-        }
     }
 }
