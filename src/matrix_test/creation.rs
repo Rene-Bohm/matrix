@@ -8,7 +8,7 @@ mod test {
 
         let matrix_new = Matrix::new(3, 3, buffer);
 
-        assert_eq!(matrix_new.unwrap().get(), vec![1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        assert_eq!(matrix_new.unwrap().get_vec(), vec![1, 2, 3, 4, 5, 6, 7, 8, 9]);
 
         let buffer = vec![1, 2, 3, 4, 5, 6, 7, 8];
 

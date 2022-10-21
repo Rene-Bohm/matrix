@@ -7,9 +7,9 @@ use crate::num::{One, Zero};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Matrix<T> {
-    pub row: usize,
-    pub column: usize,
-    pub entries: Vec<T>,
+    pub(crate) row: usize,
+    pub(crate) column: usize,
+    pub(crate) entries: Vec<T>,
 }
 
 impl<T> Matrix<T>
@@ -71,7 +71,7 @@ where
         }
     }
 
-    pub fn get(&self) -> Vec<T> {
+    pub fn get_vec(&self) -> Vec<T> {
         self.entries.clone()
     }
 
