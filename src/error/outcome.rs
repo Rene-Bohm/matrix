@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::fmt::Debug;
 use std::fmt::Display;
 
@@ -6,7 +8,7 @@ enum MatrixCreation {
     GenericError(),
 }
 
-enum outcome<Success, ErrorType>
+enum Outcome<Success, ErrorType>
 where
     ErrorType: Error,
 {
