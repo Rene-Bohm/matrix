@@ -22,7 +22,7 @@ mod test {
         let mut matrix_new = Matrix::new(3, 3, buffer).unwrap();
 
         //matrix_new.unwrap()[1] = &[4,5,6];
-        matrix_new[2][2] = 9;
+        matrix_new[(2, 2)] = 9;
 
         println!("{:?}", matrix_new);
     }

@@ -67,8 +67,8 @@ impl<T> Index<usize> for Matrix<T> {
     }
 }
 
-impl<T> IndexMut<usize> for Matrix<T> {
-    fn index_mut<'a>(&'a mut self, index: usize) -> &'a mut [T] {
-        &mut self.entries[(index * self.row)..(index + 1) * self.row]
-    }
-}
+// impl<T> IndexMut<usize> for Matrix<T> {
+//     fn index_mut<'a>(&'a mut self, index: usize) -> &'a mut [T] {
+//         &mut self.entries[(index * self.row)..(index + 1) * self.row]
+//     }
+// }
